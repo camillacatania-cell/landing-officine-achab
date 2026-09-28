@@ -15,9 +15,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Officine Achab — Fashion & Design Gallery, Palermo",
+  title: "MU Creative Space — Design fatto a mano, Palermo",
   description:
-    "Officine Achab porta a Palermo pezzi unici di moda e arredo, nati dalle mani di designer emergenti e case che scelgono la qualità. Via Roma 340, Kalsa.",
+    "MU Creative Space porta a Palermo gioielli, tessuti e ceramiche disegnati e realizzati a mano da Cetti Davì e Dario Feo, in edizione limitata dal 2003. Piazza Cattolica 4, Kalsa.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

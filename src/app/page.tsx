@@ -2,8 +2,8 @@ import Image from "next/image";
 import { ArrowUpRight, MapPin, Envelope } from "@phosphor-icons/react/dist/ssr";
 
 const NAV_LINKS = [
-  { label: "Galleria", href: "#galleria" },
-  { label: "Perché sceglierci", href: "#perche" },
+  { label: "Lo studio", href: "#studio" },
+  { label: "Le collezioni", href: "#collezioni" },
   { label: "Contatti", href: "#contatti" },
 ];
 
@@ -26,8 +26,9 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--background)]/90 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <span className="font-display text-lg font-semibold tracking-tight">
-          Officine Achab
+        <span className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
+          <Image src="/images/mu-logo.png" alt="MU" width={40} height={19} />
+          Creative Space
         </span>
         <nav className="hidden gap-8 md:flex">
           {NAV_LINKS.map((link) => (
@@ -56,18 +57,19 @@ function Hero() {
     <section className="mx-auto grid max-w-7xl gap-10 px-6 pt-16 pb-24 md:grid-cols-2 md:items-center md:pt-20">
       <div className="flex flex-col gap-6">
         <h1 className="font-display max-w-xl text-4xl font-semibold leading-none tracking-tight md:text-6xl">
-          Il design che non trovi altrove.
+          Il design che si tocca.
         </h1>
         <p className="max-w-md text-base leading-relaxed text-[var(--color-muted-foreground)] md:text-lg">
-          Officine Achab porta a Palermo pezzi unici di moda e arredo, nati
-          dalle mani di designer emergenti e case che scelgono la qualità.
+          MU Creative Space porta a Palermo gioielli, tessuti e ceramiche
+          disegnati e realizzati a mano da Cetti Davì e Dario Feo, in
+          edizione limitata, dal 2003.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">
           <a
-            href="#galleria"
+            href="#collezioni"
             className="flex h-12 items-center justify-center rounded-full bg-[var(--color-primary)] px-6 text-sm font-medium text-[var(--color-on-primary)] transition-colors hover:bg-[var(--color-secondary)]"
           >
-            Scopri la galleria
+            Scopri le collezioni
           </a>
           <a
             href="#contatti"
@@ -79,8 +81,8 @@ function Hero() {
       </div>
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-[3/4]">
         <Image
-          src="https://picsum.photos/seed/officine-achab-gallery-interior/900/1200"
-          alt="Interno della galleria Officine Achab, via Roma 340, Palermo"
+          src="/images/store-interior.jpg"
+          alt="Interno dello store MU Creative Space, Piazza Cattolica, Palermo"
           fill
           priority
           className="object-cover"
@@ -92,31 +94,34 @@ function Hero() {
 
 const VALUE_PROPS = [
   {
-    title: "Pezzi introvabili",
-    body: "Ogni oggetto è selezionato personalmente, mai in serie, mai scontato nel gusto.",
-    image: "officine-achab-unique-piece",
+    title: "Fatto a mano, in edizione limitata",
+    body: "Ogni pezzo nasce dal disegno e passa per la lavorazione manuale: nessuna serie, nessuna copia.",
+    image: "/images/model-portrait.jpg",
+    alt: "Modella con collana gioiello MU in ceramica",
   },
   {
-    title: "Voci nuove del design",
-    body: "Spazio a designer siciliani e internazionali ancora poco conosciuti, insieme a marchi storici come Marimekko.",
-    image: "officine-achab-emerging-designer",
+    title: "Vent'anni di ricerca",
+    body: "Cetti Davì e Dario Feo studiano materiali e forme dal 2003, tra Palermo e il resto del mondo.",
+    image: "/images/model-necklace.jpg",
+    alt: "Modella con collana in ceramica rossa MU",
   },
   {
-    title: "Un'esperienza, non uno scaffale",
-    body: "In via Roma 340, nel cuore della Kalsa, ogni visita è un percorso tra storie e materiali.",
-    image: "officine-achab-kalsa-store",
+    title: "Uno spazio da toccare",
+    body: "\"Si prega di toccare\": in Piazza Cattolica ogni oggetto si scopre anche con le mani.",
+    image: "/images/ibridi-1.jpg",
+    alt: "Complemento d'arredo IBRIDI, texture scultorea nera",
   },
 ];
 
 function ValueProps() {
   return (
-    <section id="galleria" className="mx-auto max-w-7xl px-6 py-24">
+    <section id="collezioni" className="mx-auto max-w-7xl px-6 py-24">
       <div className="grid gap-6 md:grid-cols-3">
         <article className="flex flex-col gap-5 md:col-span-2 md:row-span-1">
           <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
             <Image
-              src={`https://picsum.photos/seed/${VALUE_PROPS[0].image}/1200/750`}
-              alt={VALUE_PROPS[0].title}
+              src={VALUE_PROPS[0].image}
+              alt={VALUE_PROPS[0].alt}
               fill
               className="object-cover"
             />
@@ -136,8 +141,8 @@ function ValueProps() {
             <article key={item.title} className="flex flex-col gap-4">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
                 <Image
-                  src={`https://picsum.photos/seed/${item.image}/700/525`}
-                  alt={item.title}
+                  src={item.image}
+                  alt={item.alt}
                   fill
                   className="object-cover"
                 />
@@ -161,15 +166,17 @@ function ValueProps() {
 function Highlight() {
   return (
     <section
-      id="perche"
+      id="studio"
       className="border-y border-[var(--color-border)] bg-[var(--color-primary)] text-[var(--color-on-primary)]"
     >
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
         <p className="font-display text-2xl leading-snug md:text-3xl">
-          Due architetti hanno trasformato una vetrina in via Roma in un
-          punto di riferimento per il design a Palermo, premiato a Palermo
-          Design Week per la sua capacità di raccontare gli oggetti che
-          espone.
+          &ldquo;I colori, le luci, gli odori, i suoni e soprattutto
+          l&apos;esperienza tattile: tutto qui viene curato nei minimi
+          dettagli.&rdquo;
+        </p>
+        <p className="mt-6 text-sm uppercase tracking-[0.2em] opacity-80">
+          Cetti Davì, fondatrice di MU Creative Space
         </p>
       </div>
     </section>
@@ -182,32 +189,33 @@ function Contact() {
       <div className="grid gap-10 md:grid-cols-2">
         <div className="flex flex-col gap-6">
           <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
-            Vieni a scoprirla di persona.
+            Vieni a scoprirlo di persona.
           </h2>
           <p className="max-w-md text-[var(--color-muted-foreground)]">
-            La galleria è aperta nel cuore della Kalsa. Passa a trovarci o
-            scrivici per sapere cosa c&apos;è in esposizione questa settimana.
+            Lo studio è aperto in Piazza Cattolica, nel cuore della Kalsa.
+            Passa a trovarci o scrivici per sapere cosa c&apos;è in
+            lavorazione questa settimana.
           </p>
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <MapPin size={20} weight="regular" aria-hidden="true" />
-              <span>Via Roma 340, 90133 Palermo</span>
+              <span>Piazza Cattolica 4, 90133 Palermo</span>
             </div>
             <div className="flex items-center gap-3">
               <Envelope size={20} weight="regular" aria-hidden="true" />
               <a
-                href="mailto:info@officineachab.it"
+                href="mailto:info@mucreativespace.com"
                 className="underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-foreground"
               >
-                info@officineachab.it
+                info@mucreativespace.com
               </a>
             </div>
           </div>
         </div>
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
           <Image
-            src="https://picsum.photos/seed/officine-achab-via-roma-facade/900/675"
-            alt="Facciata di Officine Achab su via Roma, Palermo"
+            src="/images/store-interior.jpg"
+            alt="Vetrina dello store MU Creative Space, Piazza Cattolica, Palermo"
             fill
             className="object-cover"
           />
@@ -221,9 +229,9 @@ function Footer() {
   return (
     <footer className="border-t border-[var(--color-border)]">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-10 text-sm text-[var(--color-muted-foreground)] sm:flex-row sm:items-center sm:justify-between">
-        <span>Officine Achab — Via Roma 340, Palermo</span>
+        <span>MU Creative Space — Piazza Cattolica 4, Palermo</span>
         <a
-          href="mailto:info@officineachab.it"
+          href="mailto:info@mucreativespace.com"
           className="inline-flex items-center gap-1 hover:text-foreground"
         >
           Scrivici <ArrowUpRight size={14} aria-hidden="true" />

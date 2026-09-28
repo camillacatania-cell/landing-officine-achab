@@ -1,28 +1,28 @@
 import type { Metadata } from "next";
-import { Syne, Manrope } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "MU Creative Space — Design fatto a mano, Palermo",
+  title: "Osteria dei Vespri — Ristorante a Palazzo Gangi, Palermo",
   description:
-    "MU Creative Space porta a Palermo gioielli, tessuti e ceramiche disegnati e realizzati a mano da Cetti Davì e Dario Feo, in edizione limitata dal 2003. Piazza Cattolica 4, Kalsa.",
+    "Osteria dei Vespri: cucina siciliana contemporanea di Alberto Rizzo dentro Palazzo Gangi Valguarnera, dove Visconti girò il ballo del Gattopardo. Dal 1999, cantina con 650+ etichette. Piazza Croce dei Vespri 6, Palermo.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="it" className={`${syne.variable} ${manrope.variable} h-full antialiased`}>
+    <html lang="it" className={`${fraunces.variable} ${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">{children}</body>
     </html>
   );

@@ -79,13 +79,13 @@ function Hero() {
           </a>
         </div>
       </div>
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-[3/4]">
+      <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-[3/4]">
         <Image
           src="/images/store-interior.jpg"
           alt="Interno dello store MU Creative Space, Piazza Cattolica, Palermo"
           fill
           priority
-          className="object-cover"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
       </div>
     </section>
@@ -102,8 +102,8 @@ const VALUE_PROPS = [
   {
     title: "Vent'anni di ricerca",
     body: "Cetti Davì e Dario Feo studiano materiali e forme dal 2003, tra Palermo e il resto del mondo.",
-    image: "/images/model-necklace.jpg",
-    alt: "Modella con collana in ceramica rossa MU",
+    image: "/images/mandala-candleholder.jpg",
+    alt: "Portacandela in ceramica, collezione Mandala",
   },
   {
     title: "Uno spazio da toccare",
@@ -117,13 +117,13 @@ function ValueProps() {
   return (
     <section id="collezioni" className="mx-auto max-w-7xl px-6 py-24">
       <div className="grid gap-6 md:grid-cols-3">
-        <article className="flex flex-col gap-5 md:col-span-2 md:row-span-1">
+        <article className="group flex flex-col gap-5 md:col-span-2 md:row-span-1">
           <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
             <Image
               src={VALUE_PROPS[0].image}
               alt={VALUE_PROPS[0].alt}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
           </div>
           <div>
@@ -138,13 +138,13 @@ function ValueProps() {
 
         <div className="flex flex-col gap-6">
           {VALUE_PROPS.slice(1).map((item) => (
-            <article key={item.title} className="flex flex-col gap-4">
+            <article key={item.title} className="group flex flex-col gap-4">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
                 <Image
                   src={item.image}
                   alt={item.alt}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               </div>
               <div>
@@ -167,8 +167,12 @@ function Highlight() {
   return (
     <section
       id="studio"
-      className="border-y border-[var(--color-border)] bg-[var(--color-primary)] text-[var(--color-on-primary)]"
+      className="relative border-y border-[var(--color-border)] bg-[var(--color-primary)] text-[var(--color-on-primary)]"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -top-16 h-16 bg-gradient-to-b from-transparent to-[var(--color-primary)]"
+      />
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
         <p className="font-display text-2xl leading-snug md:text-3xl">
           &ldquo;I colori, le luci, gli odori, i suoni e soprattutto
@@ -179,6 +183,10 @@ function Highlight() {
           Cetti Davì, fondatrice di MU Creative Space
         </p>
       </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -bottom-16 h-16 bg-gradient-to-t from-transparent to-[var(--color-primary)]"
+      />
     </section>
   );
 }
@@ -214,8 +222,8 @@ function Contact() {
         </div>
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
           <Image
-            src="/images/store-interior.jpg"
-            alt="Vetrina dello store MU Creative Space, Piazza Cattolica, Palermo"
+            src="/images/twillin-campaign.jpg"
+            alt="Campagna Twillin, foulard in seta stampata MU Creative Space"
             fill
             className="object-cover"
           />
@@ -228,14 +236,31 @@ function Contact() {
 function Footer() {
   return (
     <footer className="border-t border-[var(--color-border)]">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-10 text-sm text-[var(--color-muted-foreground)] sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-10 text-sm text-[var(--color-muted-foreground)] sm:flex-row sm:items-center sm:justify-between">
         <span>MU Creative Space — Piazza Cattolica 4, Palermo</span>
-        <a
-          href="mailto:info@mucreativespace.com"
-          className="inline-flex items-center gap-1 hover:text-foreground"
-        >
-          Scrivici <ArrowUpRight size={14} aria-hidden="true" />
-        </a>
+        <nav className="flex items-center gap-6">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="transition-colors hover:text-foreground"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#contatti"
+            className="transition-colors hover:text-foreground"
+          >
+            Privacy
+          </a>
+          <a
+            href="mailto:info@mucreativespace.com"
+            className="inline-flex items-center gap-1 transition-colors hover:text-foreground"
+          >
+            Scrivici <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
+        </nav>
       </div>
     </footer>
   );

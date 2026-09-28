@@ -35,7 +35,7 @@ function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-[var(--color-muted-foreground)] transition-colors hover:text-foreground"
+              className="text-sm text-[var(--color-muted-foreground)] transition-colors duration-200 hover:text-foreground"
             >
               {link.label}
             </a>
@@ -43,7 +43,7 @@ function Header() {
         </nav>
         <a
           href="#contatti"
-          className="rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-on-primary)] transition-colors hover:bg-[var(--color-secondary)]"
+          className="rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-on-primary)] transition-[background-color,transform] duration-200 ease-out hover:bg-[var(--color-secondary)] active:scale-[0.97]"
         >
           Vieni a trovarci
         </a>
@@ -67,13 +67,13 @@ function Hero() {
         <div className="flex flex-col gap-4 sm:flex-row">
           <a
             href="#collezioni"
-            className="flex h-12 items-center justify-center rounded-full bg-[var(--color-primary)] px-6 text-sm font-medium text-[var(--color-on-primary)] transition-colors hover:bg-[var(--color-secondary)]"
+            className="flex h-12 items-center justify-center rounded-full bg-[var(--color-primary)] px-6 text-sm font-medium text-[var(--color-on-primary)] transition-[background-color,transform] duration-200 ease-out hover:bg-[var(--color-secondary)] active:scale-[0.97]"
           >
             Scopri le collezioni
           </a>
           <a
             href="#contatti"
-            className="flex h-12 items-center justify-center rounded-full border border-[var(--color-border)] px-6 text-sm font-medium transition-colors hover:bg-[var(--color-muted)]"
+            className="flex h-12 items-center justify-center rounded-full border border-[var(--color-border)] px-6 text-sm font-medium transition-[background-color,transform] duration-200 ease-out hover:bg-[var(--color-muted)] active:scale-[0.97]"
           >
             Vieni a trovarci
           </a>
@@ -85,7 +85,7 @@ function Hero() {
           alt="Interno dello store MU Creative Space, Piazza Cattolica, Palermo"
           fill
           priority
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          className="object-cover transition-transform duration-500 ease-out motion-safe:group-hover:scale-105"
         />
       </div>
     </section>
@@ -123,7 +123,7 @@ function ValueProps() {
               src={VALUE_PROPS[0].image}
               alt={VALUE_PROPS[0].alt}
               fill
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              className="object-cover transition-transform duration-500 ease-out motion-safe:group-hover:scale-105"
             />
           </div>
           <div>
@@ -144,7 +144,7 @@ function ValueProps() {
                   src={item.image}
                   alt={item.alt}
                   fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 ease-out motion-safe:group-hover:scale-105"
                 />
               </div>
               <div>
@@ -213,7 +213,7 @@ function Contact() {
               <Envelope size={20} weight="regular" aria-hidden="true" />
               <a
                 href="mailto:info@mucreativespace.com"
-                className="underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-foreground"
+                className="underline decoration-[var(--color-border)] underline-offset-4 transition-colors duration-200 hover:decoration-foreground"
               >
                 info@mucreativespace.com
               </a>
@@ -243,20 +243,20 @@ function Footer() {
             <a
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-foreground"
+              className="transition-colors duration-200 hover:text-foreground"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contatti"
-            className="transition-colors hover:text-foreground"
+            className="transition-colors duration-200 hover:text-foreground"
           >
             Privacy
           </a>
           <a
             href="mailto:info@mucreativespace.com"
-            className="inline-flex items-center gap-1 transition-colors hover:text-foreground"
+            className="inline-flex items-center gap-1 transition-colors duration-200 hover:text-foreground"
           >
             Scrivici <ArrowUpRight size={14} aria-hidden="true" />
           </a>

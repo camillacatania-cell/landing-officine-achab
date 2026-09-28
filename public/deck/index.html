@@ -3,31 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MU Creative Space — Proposta di design digitale</title>
+<title>Osteria dei Vespri — Proposta di design digitale</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1c1a17;
-  --charcoal:#2c2823;
-  --cream:#faf6ef;
-  --paper:#f2ecdf;
-  --line:#e2d8c4;
-  --accent:#b5471f;
-  --text-muted:#6b6153;
-  --font-display:'Syne',sans-serif;
-  --font-body:'Manrope',sans-serif;
+  --ink:#241c16;
+  --charcoal:#2f3b2c;
+  --cream:#fbf4ec;
+  --paper:#ede2d3;
+  --line:#ddcdb6;
+  --accent:#a8672e;
+  --wine:#5b2a1f;
+  --text-muted:#6b5d4f;
+  --font-display:'Fraunces',serif;
+  --font-body:'Inter',sans-serif;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 /* ===========================================
    FIXED 16:9 STAGE: MANDATORY BASE STYLES
-   Include this ENTIRE file in every presentation.
-   Slides are authored at 1920×1080 and scaled as a whole.
    =========================================== */
-
-/* 1. Lock the browser viewport */
 html,
 body {
     width: 100%;
@@ -37,7 +34,6 @@ body {
     background: var(--stage-bg, #000);
 }
 
-/* 2. Full-window deck viewport */
 .deck-viewport {
     position: fixed;
     inset: 0;
@@ -45,8 +41,6 @@ body {
     background: var(--stage-bg, #000);
 }
 
-/* 3. Fixed 16:9 design canvas.
-   JavaScript sets transform: translate(...) scale(...). */
 .deck-stage {
     position: absolute;
     left: 0;
@@ -58,8 +52,6 @@ body {
     background: var(--slide-bg, #fff);
 }
 
-/* 4. Slides stack inside the fixed stage.
-   Content must be laid out at 1920×1080, not reflowed per device. */
 .slide {
     position: absolute;
     inset: 0;
@@ -81,7 +73,6 @@ body {
     z-index: 1;
 }
 
-/* 5. Keep media inside authored slide bounds */
 img,
 video,
 canvas,
@@ -90,7 +81,6 @@ svg {
     max-height: 100%;
 }
 
-/* 6. Presentation chrome stays outside the slide design system */
 .deck-controls {
     position: fixed;
     left: 50%;
@@ -99,7 +89,6 @@ svg {
     z-index: 1000;
 }
 
-/* 7. Print one fixed-size slide per page */
 @media print {
     html,
     body {
@@ -108,13 +97,11 @@ svg {
         overflow: visible;
         background: #fff;
     }
-
     .deck-viewport {
         position: static;
         overflow: visible;
         background: #fff;
     }
-
     .deck-stage {
         position: static;
         width: auto;
@@ -122,7 +109,6 @@ svg {
         transform: none !important;
         background: none;
     }
-
     .slide {
         position: relative;
         display: block !important;
@@ -134,18 +120,15 @@ svg {
         break-after: page;
         page-break-after: always;
     }
-
     .slide:last-child {
         break-after: auto;
         page-break-after: auto;
     }
-
     .deck-controls {
         display: none !important;
     }
 }
 
-/* 8. Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -167,26 +150,26 @@ svg {
 .chrome-index{position:absolute;top:56px;left:72px;font-size:16px;letter-spacing:.15em;color:var(--text-muted);z-index:5;}
 .chrome-brand{position:absolute;top:56px;right:72px;font-size:15px;letter-spacing:.12em;color:var(--text-muted);text-transform:uppercase;z-index:5;display:flex;align-items:center;gap:14px;}
 .chrome-brand b{color:var(--accent);}
-.chrome-brand .logo{height:24px;width:auto;opacity:.85;object-fit:contain;flex-shrink:0;}
-.logo-mark{height:60px;width:auto;margin-bottom:36px;align-self:flex-start;flex-shrink:0;object-fit:contain;}
-.logo-mark-lg{height:90px;width:auto;opacity:.95;}
-.footer-line{position:absolute;bottom:52px;left:72px;font-size:14px;letter-spacing:.1em;color:#9b9082;z-index:5;}
+.chrome-brand .logo{height:26px;width:auto;opacity:.85;object-fit:contain;flex-shrink:0;}
+.logo-mark{height:64px;width:auto;margin-bottom:36px;align-self:flex-start;flex-shrink:0;object-fit:contain;}
+.logo-mark-lg{height:96px;width:auto;opacity:.95;}
+.footer-line{position:absolute;bottom:52px;left:72px;font-size:14px;letter-spacing:.1em;color:#9b8f7d;z-index:5;}
 
 .kicker{font-size:18px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;font-weight:600;}
-h1.big-title{font-family:var(--font-display);font-weight:800;font-size:88px;line-height:1.04;color:var(--ink);margin:0 0 28px 0;}
-h2.slide-title{font-family:var(--font-display);font-weight:700;font-size:56px;line-height:1.08;color:var(--ink);margin:0 0 32px 0;}
+h1.big-title{font-family:var(--font-display);font-weight:700;font-size:88px;line-height:1.04;color:var(--ink);margin:0 0 28px 0;}
+h2.slide-title{font-family:var(--font-display);font-weight:600;font-size:56px;line-height:1.08;color:var(--ink);margin:0 0 32px 0;}
 p.body-text{font-size:24px;line-height:1.6;color:var(--text-muted);max-width:680px;}
 
 .split{display:flex;width:100%;height:100%;}
 .split-left{width:52%;height:100%;padding:120px 90px;display:flex;flex-direction:column;justify-content:center;background:var(--cream);position:relative;}
 .split-right{width:48%;height:100%;position:relative;overflow:hidden;background:var(--paper);}
 .split-right img{width:100%;height:100%;object-fit:cover;}
-.img-caption{position:absolute;bottom:0;left:0;right:0;padding:20px 28px;background:linear-gradient(180deg,transparent,rgba(28,26,23,.72));z-index:2;text-align:right;}
+.img-caption{position:absolute;bottom:0;left:0;right:0;padding:20px 28px;background:linear-gradient(180deg,transparent,rgba(36,28,22,.72));z-index:2;text-align:right;}
 .img-caption span{color:#f2ecdf;font-size:15px;letter-spacing:.04em;font-weight:500;}
 
 .title-slide{background:var(--cream);}
 .title-wrap{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 120px;}
-.title-slide h1{font-family:var(--font-display);font-weight:800;font-size:112px;line-height:1.0;color:var(--ink);margin:0 0 32px 0;}
+.title-slide h1{font-family:var(--font-display);font-weight:700;font-size:104px;line-height:1.0;color:var(--ink);margin:0 0 32px 0;}
 .title-slide .sub{font-size:26px;color:var(--text-muted);max-width:900px;line-height:1.55;}
 .title-slide .badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:16px;letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;margin-bottom:44px;width:fit-content;font-weight:600;}
 .title-slide .deco-line{position:absolute;right:120px;top:0;bottom:0;width:1px;background:var(--line);}
@@ -196,34 +179,34 @@ p.body-text{font-size:24px;line-height:1.6;color:var(--text-muted);max-width:680
 .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:56px;}
 .feature-card{background:var(--paper);border-radius:14px;padding:44px;border-left:4px solid var(--accent);}
 .feature-card .num{font-family:var(--font-display);font-size:22px;color:var(--accent);letter-spacing:.1em;margin-bottom:16px;}
-.feature-card h3{font-family:var(--font-display);font-size:30px;font-weight:700;margin-bottom:14px;color:var(--ink);}
+.feature-card h3{font-family:var(--font-display);font-size:30px;font-weight:600;margin-bottom:14px;color:var(--ink);}
 .feature-card p{font-size:20px;line-height:1.55;color:var(--text-muted);}
 
 .stat-row{display:flex;gap:80px;margin-top:60px;}
 .stat{border-top:2px solid var(--accent);padding-top:24px;}
-.stat .val{font-family:var(--font-display);font-size:64px;font-weight:800;color:var(--ink);}
+.stat .val{font-family:var(--font-display);font-size:64px;font-weight:700;color:var(--ink);}
 .stat .label{font-size:18px;color:var(--text-muted);margin-top:8px;letter-spacing:.05em;}
 
-.mockup-frame{border-radius:16px;overflow:hidden;box-shadow:0 40px 90px rgba(28,26,23,.18);border:1px solid var(--line);}
+.mockup-frame{border-radius:16px;overflow:hidden;box-shadow:0 40px 90px rgba(36,28,22,.18);border:1px solid var(--line);}
 .browser-bar{background:var(--paper);height:44px;display:flex;align-items:center;padding:0 20px;gap:8px;border-bottom:1px solid var(--line);}
-.browser-bar .dot{width:12px;height:12px;border-radius:50%;background:#d8cdb8;}
-.browser-bar .url{margin-left:16px;background:#fff;color:#8a7f6d;font-size:13px;padding:6px 18px;border-radius:6px;font-family:var(--font-body);border:1px solid var(--line);}
+.browser-bar .dot{width:12px;height:12px;border-radius:50%;background:#d8c8ae;}
+.browser-bar .url{margin-left:16px;background:#fff;color:#8a7a63;font-size:13px;padding:6px 18px;border-radius:6px;font-family:var(--font-body);border:1px solid var(--line);}
 
 .closing-slide{background:var(--ink);}
-.closing-slide .chrome-index,.closing-slide .footer-line{color:#8a8177;}
+.closing-slide .chrome-index,.closing-slide .footer-line{color:#8a7e6f;}
 .closing-wrap{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 120px;}
-.closing-wrap h1{font-family:var(--font-display);font-weight:800;font-size:96px;color:var(--cream);margin-bottom:36px;line-height:1.05;}
+.closing-wrap h1{font-family:var(--font-display);font-weight:700;font-size:96px;color:var(--cream);margin-bottom:36px;line-height:1.05;}
 .closing-wrap .kicker{color:var(--accent);margin-top:8px;}
-.closing-wrap p.body-text{color:#c9beb0;}
+.closing-wrap p.body-text{color:#c9beac;}
 .contact-row{display:flex;gap:64px;margin-top:56px;}
 .contact-item .lbl{font-size:15px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
 .contact-item .val{font-size:24px;color:var(--cream);font-weight:500;}
-.logo-mark-lg{filter:brightness(0) invert(1);}
+.closing-slide .logo-mark-lg{filter:brightness(0) invert(1);}
 
 .gallery-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px;margin-top:36px;height:420px;}
 .gallery-item{position:relative;border-radius:14px;overflow:hidden;}
 .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;}
-.gallery-item .cap{position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(180deg,transparent,rgba(28,26,23,.75));}
+.gallery-item .cap{position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(180deg,transparent,rgba(36,28,22,.75));}
 .gallery-item .cap span{color:#f2ecdf;font-size:13px;letter-spacing:.03em;font-weight:500;}
 .gallery-grid .tall{grid-row:span 2;}
 .gallery-col{display:flex;flex-direction:column;gap:20px;}
@@ -231,20 +214,20 @@ p.body-text{font-size:24px;line-height:1.6;color:var(--text-muted);max-width:680
 
 .quote-slide{padding:0 160px;display:flex;flex-direction:column;justify-content:center;height:100%;background:var(--paper);}
 .quote-slide .mark{font-family:var(--font-display);font-size:140px;color:var(--accent);line-height:.5;margin-bottom:12px;}
-.quote-slide p{font-family:var(--font-display);font-weight:700;font-size:54px;line-height:1.25;color:var(--ink);max-width:1300px;}
+.quote-slide p{font-family:var(--font-display);font-weight:600;font-size:52px;line-height:1.28;color:var(--ink);max-width:1300px;font-style:italic;}
 .quote-slide .attribution{margin-top:44px;font-size:20px;color:var(--text-muted);letter-spacing:.05em;}
 
 .product-strip{display:flex;gap:28px;margin-top:56px;}
 .product-card{flex:1;background:var(--paper);border-radius:16px;overflow:hidden;border:1px solid var(--line);}
 .product-card img{width:100%;height:260px;object-fit:cover;display:block;}
 .product-card .info{padding:20px 22px;}
-.product-card .info .name{font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--ink);margin-bottom:4px;}
+.product-card .info .name{font-family:var(--font-display);font-weight:600;font-size:20px;color:var(--ink);margin-bottom:4px;}
 .product-card .info .desc{font-size:15px;color:var(--text-muted);}
 
-.deck-controls{display:flex;gap:14px;align-items:center;background:rgba(28,26,23,.82);backdrop-filter:blur(8px);padding:10px 18px;border-radius:100px;border:1px solid rgba(255,255,255,.12);}
+.deck-controls{display:flex;gap:14px;align-items:center;background:rgba(36,28,22,.82);backdrop-filter:blur(8px);padding:10px 18px;border-radius:100px;border:1px solid rgba(255,255,255,.12);}
 .deck-controls button{background:none;border:none;color:#f2ecdf;font-size:18px;cursor:pointer;width:34px;height:34px;border-radius:50%;transition:background .2s;}
-.deck-controls button:hover{background:rgba(181,71,31,.5);}
-.deck-controls .count{font-size:14px;color:#c9beb0;font-family:var(--font-body);letter-spacing:.05em;min-width:50px;text-align:center;}
+.deck-controls button:hover{background:rgba(168,103,46,.5);}
+.deck-controls .count{font-size:14px;color:#c9beac;font-family:var(--font-body);letter-spacing:.05em;min-width:50px;text-align:center;}
 </style>
 </head>
 <body>
@@ -253,14 +236,14 @@ p.body-text{font-size:24px;line-height:1.6;color:var(--text-muted);max-width:680
 
 <section class="slide title-slide active">
   <div class="chrome-index reveal">01 / 09</div>
-  <div class="chrome-brand reveal"><img class="logo" src="assets/mu-logo.png" alt="MU logo"> SECO <b>ONBOARDING</b></div>
+  <div class="chrome-brand reveal"><img class="logo" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo"> SECO <b>ONBOARDING</b></div>
   <div class="deco-line"></div>
   <div class="deco-dot"></div>
   <div class="title-wrap">
-    <img class="logo-mark reveal" src="assets/mu-logo.png" alt="MU logo">
+    <img class="logo-mark reveal" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo">
     <div class="badge reveal">Proposta di design digitale</div>
-    <h1 class="reveal">MU Creative<br>Space</h1>
-    <p class="sub reveal">Un laboratorio di design nel cuore della Kalsa, Palermo. "Si prega di toccare" — qui ogni oggetto racconta chi lo ha fatto e come.</p>
+    <h1 class="reveal">Osteria dei<br>Vespri</h1>
+    <p class="sub reveal">Cucina siciliana contemporanea dentro Palazzo Gangi Valguarnera, dove Visconti girò il ballo del Gattopardo. Dal 1999, nel cuore della Kalsa.</p>
   </div>
   <div class="footer-line">CAMILLA CATANIA — DISEGNO INDUSTRIALE</div>
 </section>
@@ -269,70 +252,70 @@ p.body-text{font-size:24px;line-height:1.6;color:var(--text-muted);max-width:680
   <div class="split">
     <div class="split-left">
       <div class="chrome-index reveal">02 / 09</div>
-      <div class="chrome-brand reveal" style="position:absolute;top:56px;right:0;"><img class="logo" src="assets/mu-logo.png" alt="MU logo"> SECO <b>ONBOARDING</b></div>
-      <div class="kicker reveal">Il laboratorio</div>
-      <h2 class="slide-title reveal">Uno studio,<br>non solo un negozio.</h2>
-      <p class="body-text reveal">MU nasce nel 2003 dall'incontro tra Cetti Davì e Dario Feo. Vent'anni di ricerca su materiali e forme, tra Palermo e il resto del mondo, hanno portato allo store di Piazza Cattolica: gioielli, tessuti, ceramiche, tutti realizzati a mano, in edizione limitata.</p>
+      <div class="chrome-brand reveal" style="position:absolute;top:56px;right:0;"><img class="logo" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo"> SECO <b>ONBOARDING</b></div>
+      <div class="kicker reveal">Il palazzo</div>
+      <h2 class="slide-title reveal">Non un ristorante<br>qualsiasi.</h2>
+      <p class="body-text reveal">Avvolta dalle mura dell'antico Palazzo Gangi, l'Osteria dei Vespri osserva silenziosa i passanti tra Piazza Croce dei Vespri e la storica Galleria d'Arte Moderna. È qui, nel 1963, che Luchino Visconti girò la sequenza del gran ballo ne "Il Gattopardo".</p>
       <div class="stat-row reveal">
-        <div class="stat"><div class="val">2003</div><div class="label">Anno di fondazione</div></div>
-        <div class="stat"><div class="val">2011</div><div class="label">A' Design Award</div></div>
+        <div class="stat"><div class="val">1999</div><div class="label">Anno di apertura</div></div>
+        <div class="stat"><div class="val">650+</div><div class="label">Etichette in cantina</div></div>
       </div>
     </div>
     <div class="split-right">
-      <img src="assets/model-portrait.jpg" alt="Modella con gioiello MU, still life">
-      <div class="img-caption"><span>Campagna gioielli MU</span></div>
+      <img src="assets/sala-palazzo.jpg" alt="Sala interna di Palazzo Gangi Valguarnera, affreschi e lampadari">
+      <div class="img-caption"><span>Sala di Palazzo Gangi Valguarnera</span></div>
     </div>
   </div>
 </section>
 
 <section class="slide feature-slide">
   <div class="chrome-index reveal">03 / 09</div>
-  <div class="chrome-brand reveal"><img class="logo" src="assets/mu-logo.png" alt="MU logo"> SECO <b>ONBOARDING</b></div>
+  <div class="chrome-brand reveal"><img class="logo" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo"> SECO <b>ONBOARDING</b></div>
   <div class="kicker reveal">Il problema</div>
-  <h2 class="slide-title reveal">Un lavoro fatto a mano,<br>online invisibile.</h2>
-  <p class="body-text reveal">Il sito attuale è un e-commerce Shopify essenziale, pensato per la vendita ma non per raccontare il processo, i materiali, le mani che lavorano ogni pezzo. Chi arriva da fuori Palermo non capisce cosa rende MU diverso da un negozio di design qualsiasi.</p>
+  <h2 class="slide-title reveal">Una storia rara,<br>raccontata poco online.</h2>
+  <p class="body-text reveal">Il sito attuale elenca menu e cantina, ma non racconta perché mangiare qui sia un'esperienza diversa: la sala del Gattopardo, la cucina di Alberto Rizzo, i 650 vini scelti uno per uno. Chi non conosce già il posto non coglie il valore prima di prenotare.</p>
   <div class="feature-grid" style="margin-top:64px;">
     <div class="feature-card reveal">
       <div class="num">01</div>
-      <h3>Il processo non si vede</h3>
-      <p>Nessuna sezione racconta come nasce un pezzo, dal disegno alla lavorazione manuale.</p>
+      <h3>Il palazzo non si vede</h3>
+      <p>Nessuna narrazione della location: il legame con Visconti e il Gattopardo resta una nota a margine.</p>
     </div>
     <div class="feature-card reveal">
       <div class="num">02</div>
-      <h3>Nessuna narrazione del luogo</h3>
-      <p>Lo spazio fisico — bianco, minimale, pensato per il tatto — non ha una controparte online.</p>
+      <h3>Cucina senza volto</h3>
+      <p>La ricerca di Alberto Rizzo tra tradizione e tecnica non emerge: sembra un menu come tanti altri.</p>
     </div>
   </div>
 </section>
 
 <section class="slide feature-slide">
   <div class="chrome-index reveal">04 / 09</div>
-  <div class="chrome-brand reveal"><img class="logo" src="assets/mu-logo.png" alt="MU logo"> SECO <b>ONBOARDING</b></div>
+  <div class="chrome-brand reveal"><img class="logo" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo"> SECO <b>ONBOARDING</b></div>
   <div class="kicker reveal">Lo spazio</div>
-  <h2 class="slide-title reveal" style="margin-bottom:0;">"Si prega di toccare."</h2>
+  <h2 class="slide-title reveal" style="margin-bottom:0;">Tra affreschi e bicchieri di vino.</h2>
   <div class="gallery-grid">
     <div class="gallery-item tall reveal">
-      <img src="assets/store-interior.jpg" alt="Interno dello store MU Creative Space, Palermo">
-      <div class="cap"><span>Lo store, Piazza Cattolica 4 — "Between art and design"</span></div>
+      <img src="assets/sala-palazzo.jpg" alt="Sala interna di Palazzo Gangi Valguarnera">
+      <div class="cap"><span>La sala del Gattopardo, Palazzo Gangi Valguarnera</span></div>
     </div>
     <div class="gallery-col">
       <div class="gallery-item reveal">
-        <img src="assets/model-necklace.jpg" alt="Modella con collana in ceramica rossa MU">
-        <div class="cap"><span>Collana in ceramica, collezione gioielli</span></div>
+        <img src="assets/facciata.jpg" alt="Facciata e dehor di Osteria dei Vespri">
+        <div class="cap"><span>Il dehor, Piazza Croce dei Vespri</span></div>
       </div>
       <div class="gallery-item reveal">
-        <img src="assets/mandala-candleholder.jpg" alt="Portacandela ceramica collezione Mandala">
-        <div class="cap"><span>Mandala — portacandela in ceramica</span></div>
+        <img src="assets/bar.jpg" alt="Bancone bar dell'enoteca">
+        <div class="cap"><span>Il bancone dell'enoteca</span></div>
       </div>
     </div>
     <div class="gallery-col">
       <div class="gallery-item reveal">
-        <img src="assets/product-ring-red.jpg" alt="Anello scultura in ceramica rossa">
-        <div class="cap"><span>Anello-scultura, edizione limitata</span></div>
+        <img src="assets/sala-vino.jpg" alt="Tavolo apparecchiato con bottiglia di vino">
+        <div class="cap"><span>Un tavolo, una bottiglia scelta</span></div>
       </div>
       <div class="gallery-item reveal">
-        <img src="assets/twillin-campaign.jpg" alt="Campagna Twillin, foulard in seta">
-        <div class="cap"><span>Twillin — foulard in seta stampata</span></div>
+        <img src="assets/carta-vini.jpg" alt="Carta dei vini su tavolo esterno">
+        <div class="cap"><span>La carta dei vini, 650+ etichette</span></div>
       </div>
     </div>
   </div>
@@ -340,55 +323,55 @@ p.body-text{font-size:24px;line-height:1.6;color:var(--text-muted);max-width:680
 
 <section class="slide feature-slide">
   <div class="chrome-index reveal">05 / 09</div>
-  <div class="chrome-brand reveal"><img class="logo" src="assets/mu-logo.png" alt="MU logo"> SECO <b>ONBOARDING</b></div>
-  <div class="kicker reveal">Le collezioni</div>
-  <h2 class="slide-title reveal">Ogni pezzo,<br>una piccola scultura.</h2>
+  <div class="chrome-brand reveal"><img class="logo" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo"> SECO <b>ONBOARDING</b></div>
+  <div class="kicker reveal">La cucina</div>
+  <h2 class="slide-title reveal">Territorio e tecnica,<br>senza tradire il piatto.</h2>
   <div class="product-strip">
     <div class="product-card reveal">
-      <img src="assets/ibridi-1.jpg" alt="Complemento arredo IBRIDI, texture a squame nere">
-      <div class="info"><div class="name">IBRIDI</div><div class="desc">Complemento d'arredo, texture scultorea</div></div>
+      <img src="assets/piatto-tonno.jpg" alt="Tonno scottato con gelatina di agrumi">
+      <div class="info"><div class="name">TONNO SCOTTATO</div><div class="desc">Gelatina di agrumi, fiori eduli</div></div>
     </div>
     <div class="product-card reveal">
-      <img src="assets/solid-diffuser.jpg" alt="Diffusore per ambiente SOLID, rosso">
-      <div class="info"><div class="name">SOLID</div><div class="desc">Diffusore per ambiente, ceramica e legno</div></div>
+      <img src="assets/piatto-morchelle.jpg" alt="Piatto con funghi morchella e albicocche">
+      <div class="info"><div class="name">MORCHELLE</div><div class="desc">Mousse leggera, albicocche marinate</div></div>
     </div>
     <div class="product-card reveal">
-      <img src="assets/coffee-ball.jpg" alt="Tazzina Coffee Ball verde">
-      <div class="info"><div class="name">COFFEE BALL</div><div class="desc">Tazzina da caffè, progetto Synergia</div></div>
+      <img src="assets/piatto-zuppa.jpg" alt="Zuppa verde con capasanta">
+      <div class="info"><div class="name">ZUPPA VERDE</div><div class="desc">Vellutata di stagione, capasanta scottata</div></div>
     </div>
     <div class="product-card reveal">
-      <img src="assets/bilico-ring-blue.jpg" alt="Anello Bilico blu con perla">
-      <div class="info"><div class="name">BILICO</div><div class="desc">Anello gioiello, equilibrio e perla</div></div>
+      <img src="assets/dessert.jpg" alt="Selezione di dessert, cannolo e arancia caramellata">
+      <div class="info"><div class="name">DESSERT</div><div class="desc">Cannolo, arancia caramellata, cioccolato</div></div>
     </div>
   </div>
 </section>
 
 <section class="slide feature-slide">
   <div class="chrome-index reveal">06 / 09</div>
-  <div class="chrome-brand reveal"><img class="logo" src="assets/mu-logo.png" alt="MU logo"> SECO <b>ONBOARDING</b></div>
+  <div class="chrome-brand reveal"><img class="logo" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo"> SECO <b>ONBOARDING</b></div>
   <div class="kicker reveal">La proposta</div>
-  <h2 class="slide-title reveal">Una landing che<br>si comporta come lo studio.</h2>
+  <h2 class="slide-title reveal">Una landing che<br>racconta perché prenotare.</h2>
   <div class="feature-grid">
     <div class="feature-card reveal">
       <div class="num">01</div>
-      <h3>Il processo, in primo piano</h3>
-      <p>Una sezione dedicata a come nasce un pezzo: disegno, materiale, lavorazione a mano.</p>
+      <h3>Il palazzo, in primo piano</h3>
+      <p>Una sezione dedicata alla storia: Palazzo Gangi, il Gattopardo, il 1999.</p>
     </div>
     <div class="feature-card reveal">
       <div class="num">02</div>
-      <h3>Le persone dietro MU</h3>
-      <p>Cetti Davì e Dario Feo: vent'anni di ricerca condivisa, raccontati come parte del prodotto.</p>
+      <h3>La cucina di Alberto Rizzo</h3>
+      <p>I piatti raccontati come ricerca, non solo come voci di menu.</p>
     </div>
   </div>
   <div class="feature-grid" style="margin-top:36px;grid-template-columns:1fr;">
     <div class="feature-card reveal" style="display:flex;align-items:center;justify-content:space-between;gap:48px;">
       <div style="flex:1;">
         <div class="num">03</div>
-        <h3>Lo spazio come esperienza</h3>
-        <p>Foto e testi che restituiscono la sensazione del "si prega di toccare" anche online.</p>
+        <h3>La cantina come argomento</h3>
+        <p>650 etichette non sono un dettaglio: sono la prova della cura del posto.</p>
       </div>
       <div style="flex:1;border-left:1px solid var(--line);padding-left:48px;">
-        <p style="font-size:22px;color:var(--ink);font-style:italic;line-height:1.4;">"Il design che si tocca, prima ancora di guardarlo."</p>
+        <p style="font-size:22px;color:var(--ink);font-style:italic;line-height:1.4;">"Si mangia nella sala dove Visconti girò il ballo del Gattopardo."</p>
         <p style="font-size:15px;color:var(--text-muted);margin-top:12px;letter-spacing:.05em;text-transform:uppercase;">Headline proposta per la landing</p>
       </div>
     </div>
@@ -397,15 +380,15 @@ p.body-text{font-size:24px;line-height:1.6;color:var(--text-muted);max-width:680
 
 <section class="slide quote-slide">
   <div class="chrome-index reveal">07 / 09</div>
-  <div class="chrome-brand reveal"><img class="logo" src="assets/mu-logo.png" alt="MU logo"> SECO <b>ONBOARDING</b></div>
+  <div class="chrome-brand reveal"><img class="logo" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo"> SECO <b>ONBOARDING</b></div>
   <div class="mark reveal">"</div>
-  <p class="reveal">I colori, le luci, gli odori, i suoni e soprattutto l'esperienza tattile: tutto qui viene curato nei minimi dettagli.</p>
-  <div class="attribution reveal">— Cetti Davì, fondatrice di MU Creative Space</div>
+  <p class="reveal">Se vogliamo che tutto rimanga com'è, bisogna che tutto cambi.</p>
+  <div class="attribution reveal">— G. T. di Lampedusa, Il Gattopardo — citato nella storia del ristorante</div>
 </section>
 
 <section class="slide feature-slide" style="align-items:center;">
   <div class="chrome-index reveal">08 / 09</div>
-  <div class="chrome-brand reveal"><img class="logo" src="assets/mu-logo.png" alt="MU logo"> SECO <b>ONBOARDING</b></div>
+  <div class="chrome-brand reveal"><img class="logo" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo"> SECO <b>ONBOARDING</b></div>
   <div style="width:100%;max-width:1400px;margin:0 auto;">
     <div class="kicker reveal">Anteprima</div>
     <h2 class="slide-title reveal">La landing, in costruzione.</h2>
@@ -413,23 +396,23 @@ p.body-text{font-size:24px;line-height:1.6;color:var(--text-muted);max-width:680
   <div class="mockup-frame reveal" style="width:100%;max-width:1400px;margin:0 auto;">
     <div class="browser-bar">
       <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-      <div class="url">landing-mu-creative-space.vercel.app</div>
+      <div class="url">landing-osteria-dei-vespri.vercel.app</div>
     </div>
-    <img src="assets/store-interior.jpg" alt="Anteprima della landing, interno dello store" style="width:100%;display:block;object-fit:cover;height:760px;">
+    <img src="assets/facciata.jpg" alt="Anteprima della landing, facciata del ristorante" style="width:100%;display:block;object-fit:cover;height:760px;">
   </div>
 </section>
 
 <section class="slide closing-slide">
   <div class="chrome-index reveal">09 / 09</div>
   <div class="closing-wrap">
-    <img class="logo-mark-lg reveal" src="assets/mu-logo.png" alt="MU logo">
+    <img class="logo-mark-lg reveal" src="assets/vespri-logo.svg" alt="Osteria dei Vespri logo">
     <div class="kicker reveal">Grazie</div>
-    <h1 class="reveal">Il design che<br>si tocca.</h1>
-    <p class="body-text reveal">MU Creative Space — Piazza Cattolica 4, Palermo.</p>
+    <h1 class="reveal">Si prega di<br>prenotare.</h1>
+    <p class="body-text reveal">Osteria dei Vespri — Piazza Croce dei Vespri 6, Palermo.</p>
     <div class="contact-row reveal">
       <div class="contact-item">
         <div class="lbl">Sito attuale</div>
-        <div class="val">mucreativespace.com</div>
+        <div class="val">osteriadeivespri.it</div>
       </div>
       <div class="contact-item">
         <div class="lbl">Proposta a cura di</div>

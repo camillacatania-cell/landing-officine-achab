@@ -1,6 +1,6 @@
 # Landing Officine Achab
 
-Sito Next.js per il caso "Officine Achab" — galleria di moda e design nel centro storico di Palermo (via Alloro 13), curata da Sarah Catalano.
+Sito Next.js per il caso "Officine Achab" — galleria di moda e design nel centro storico di Palermo (via Roma 340), curata da Sarah Catalano.
 
 ## Struttura
 - Sito Next.js (hero, offerta, perché sceglierci, contatti)

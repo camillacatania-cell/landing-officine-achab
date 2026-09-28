@@ -80,7 +80,7 @@ function Hero() {
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-[3/4]">
         <Image
           src="https://picsum.photos/seed/officine-achab-gallery-interior/900/1200"
-          alt="Interno della galleria Officine Achab, via Alloro 13, Palermo"
+          alt="Interno della galleria Officine Achab, via Roma 340, Palermo"
           fill
           priority
           className="object-cover"
@@ -103,7 +103,7 @@ const VALUE_PROPS = [
   },
   {
     title: "Un'esperienza, non uno scaffale",
-    body: "In via Alloro 13, nel cuore della Kalsa, ogni visita è un percorso tra storie e materiali.",
+    body: "In via Roma 340, nel cuore della Kalsa, ogni visita è un percorso tra storie e materiali.",
     image: "officine-achab-kalsa-store",
   },
 ];
@@ -166,7 +166,7 @@ function Highlight() {
     >
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
         <p className="font-display text-2xl leading-snug md:text-3xl">
-          Due architetti hanno trasformato una vetrina in via Alloro in un
+          Due architetti hanno trasformato una vetrina in via Roma in un
           punto di riferimento per il design a Palermo, premiato a Palermo
           Design Week per la sua capacità di raccontare gli oggetti che
           espone.
@@ -191,7 +191,7 @@ function Contact() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <MapPin size={20} weight="regular" aria-hidden="true" />
-              <span>Via Alloro 13, 90133 Palermo</span>
+              <span>Via Roma 340, 90133 Palermo</span>
             </div>
             <div className="flex items-center gap-3">
               <Envelope size={20} weight="regular" aria-hidden="true" />
@@ -206,8 +206,8 @@ function Contact() {
         </div>
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
           <Image
-            src="https://picsum.photos/seed/officine-achab-via-alloro-facade/900/675"
-            alt="Facciata di Officine Achab su via Alloro, Palermo"
+            src="https://picsum.photos/seed/officine-achab-via-roma-facade/900/675"
+            alt="Facciata di Officine Achab su via Roma, Palermo"
             fill
             className="object-cover"
           />
@@ -221,7 +221,7 @@ function Footer() {
   return (
     <footer className="border-t border-[var(--color-border)]">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-10 text-sm text-[var(--color-muted-foreground)] sm:flex-row sm:items-center sm:justify-between">
-        <span>Officine Achab — Via Alloro 13, Palermo</span>
+        <span>Officine Achab — Via Roma 340, Palermo</span>
         <a
           href="mailto:info@officineachab.it"
           className="inline-flex items-center gap-1 hover:text-foreground"
